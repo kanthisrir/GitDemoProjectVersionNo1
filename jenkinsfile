@@ -1,0 +1,61 @@
+Skip to content
+Search or jump to…
+Pull requests
+Issues
+Marketplace
+Explore
+ 
+@kanthisrir 
+pavanoltraining
+/
+JenkinsPipelineDemoProject
+Public
+Code
+Issues
+Pull requests
+1
+Actions
+Projects
+Security
+Insights
+JenkinsPipelineDemoProject/jenkinsfile
+@pavanoltraining
+pavanoltraining Create jenkinsfile
+Latest commit 66618ed on Aug 14, 2019
+ History
+ 1 contributor
+33 lines (33 sloc)  348 Bytes
+
+pipeline{
+agent any
+stages 
+{
+stage('Build') 
+{
+steps{
+echo "Building the Code.........."
+bat "mvn clean"
+}
+}
+stage('Test') 
+{
+steps{
+echo "Testing the Code.........."
+bat "mvn test"
+}
+}
+stage('Compile') 
+{
+steps{
+echo "Compiling the Project.........."
+bat "mvn compile"
+}
+}
+stage('Deploy') 
+{
+steps{
+echo "Deploying the Project.........."
+}
+}
+}
+}
